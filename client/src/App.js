@@ -1,51 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from "react";
+
 import './App.css';
-import API from "./utils/API";
 
-class App extends Component {
-
-  handleInputChange = event => {
-    // Destructure the name and value properties off of event.target
-    // Update the appropriate state
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+import Activity from "./pages/Activity";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NoMatch from "./pages/NoMatch";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-  handlePostSubmit = event => {
-    event.preventDefault();
-    API.getPosts()
-      .then(res => {
-        console.log(' get post!!')
-      })
-      .catch(err => console.log(err))
-  };
   
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={this.handlePostSubmit}
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+function App() {
+      return (
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/Home" component={Home} />
+              <Route exact path="/Activity" component={Activity} />
+              <Route component={NoMatch} />
+            </Switch>
+          </div>
+        </Router>
+      );
+   
+    
+    
 }
-
-export default App;
+export default App; 
