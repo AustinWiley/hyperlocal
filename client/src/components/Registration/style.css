@@ -1,0 +1,36 @@
+.registration {
+    background-image: url("Contact_section_BG.png");
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 50px 100px;
+}
+
+.registration h2 {
+    text-shadow: 1.5px 1.5px 0 #f6edd8;
+    color: #f6edd8;
+    font-family: Bazar;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.regis p {
+    text-align: center;
+    color: #f6edd8;
+    font-family: "Roboto Slab";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.registration .button {
+    color: #383a3c;
+    font-family: "Roboto Slab";
+    display: block;
+    margin-top: 15px;
+    width: 250px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
