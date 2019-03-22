@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 // Use apiRoutes
 app.use(routes);
 
-// Connect to the Mongo DB
+// Connect to the Mongo DB { useNewUrlParser: true }
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
 
 // Define any API routes before this runs
