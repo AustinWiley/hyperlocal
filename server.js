@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const app = express();
 // const apiRoutes = require("./routes/apiRoutes");
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbooklist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
 
 // Define any API routes before this runs
 app.get("*", function(req, res) {
