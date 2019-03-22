@@ -1,23 +1,16 @@
 const router = require("express").Router();
-const postssController = require("../../controllers/postsController");
+const postsController = require("../../controllers/postsController");
 
-
-// Matches with "/api/books/"
+// Matches with "/api/books"
 router.route("/")
+  .get(postsController.findAll)
+  .post(postsController.create);
 
-  .get(
-    cb = () => console.log("get route server side")
-  )
-  .post(function() {
-    console.log('post route')
-  });
-  
 // Matches with "/api/books/:id"
 router
   .route("/:id")
-  .get(
-  )
-  .put()
-  .delete();
+  .get(postsController.findById)
+  .put(postsController.update)
+  .delete(postsController.remove);
 
 module.exports = router;
