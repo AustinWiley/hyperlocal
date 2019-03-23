@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700i');
+
+.nav {
+    position: absolute;
+    top: -134px;
+    left: -88px;
+    width: 1516px;
+    margin: 0 auto;
+    background-color: rgba(34, 32, 42, 0.3);
+    padding: 10px 0px 7px 0px;
+}
+
+.nav h1 {
+height: 54px;
+text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
+color: #ADDDE8;
+font-size: 60px;
+line-height: 70px;
+}
+
+.content h1 {
+    margin: 0 auto;
+}
