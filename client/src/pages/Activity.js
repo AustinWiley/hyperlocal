@@ -8,7 +8,7 @@ function Activity() {
         <Row>
           <Col size="md-12">
             
-              <h1>404 Page Not Found</h1>
+              <h1>Activities page</h1>
               <h1>
                 <span role="img" aria-label="Face With Rolling Eyes Emoji">
                   🙄
