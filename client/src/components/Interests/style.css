@@ -1,0 +1,111 @@
+.interests {
+    background-image: url("Contact_section_BG.png");
+    width: 660px;
+    margin: 0 auto;
+    padding: 50px 75px;
+    border: 10px solid #fffed7;
+    border-radius: 15px;
+}
+
+.interests {
+	width: 100wh;
+	color: #fff;
+	background: linear-gradient(-45deg, rgba(238, 118, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 165, 213, 0.7), rgba(35, 213, 171, 0.7));
+	background-size: 150% 150%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+	animation: Gradient 20s ease infinite;
+}
+
+.interests h2 {
+    text-shadow: 1.5px 1.5px 0 #f6edd8;
+    color: #f6edd8;
+    font-family: Bazar;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#line {
+    text-align: center;
+    color: #f6edd8;
+    font-family: "Roboto Slab";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px; 
+ }
+
+input[type=checkbox] {
+    display:none;
+}
+
+input+label {
+    margin: 10px;
+}
+
+#brewing + label {
+    display:inline-block;
+    background:url("http://gravitystormbrewerycooperative.townsquareinteractive.com/files/2018/10/beer-4.png") no-repeat;
+    height: 125px;
+    width: 125px;;
+    background-size: 95%;
+    border-radius: 50%;
+    /* outline: 4px solid #fffed7; */
+    /* box-shadow: 0px 0px 5px 2px #fffed7; */
+}
+
+#brewing:hover + label, #skiing:hover + label, #coding:hover + label {
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px #fffed7;
+}
+
+#brewing:checked + label {
+    background:url("http://gravitystormbrewerycooperative.townsquareinteractive.com/files/2018/10/beer-4.png") no-repeat;
+    height: 125px;
+    width: 125px;
+    display:inline-block;
+    background-size: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px #2cf14d;
+}
+
+#skiing + label {
+    display:inline-block;
+    padding: 0 0 0 0px;
+    background:url("http://potton.ca/wp-content/uploads/2017/12/snow-shoe-ski-icon-49444.png") no-repeat;
+    height: 125px;
+    width: 125px;;
+    background-size: 80%;
+}
+
+#skiing:checked + label {
+    background:url("http://potton.ca/wp-content/uploads/2017/12/snow-shoe-ski-icon-49444.png") no-repeat;
+    height: 125px;
+    width: 125px;
+    display:inline-block;
+    background-size: 90%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px #2cf14d;
+}
+
+#coding + label {
+    display:inline-block;
+    padding: 0 0 0 0px;
+    background:url("http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Coding-Html-icon.png") no-repeat;
+    height: 125px;
+    width: 125px;;
+    background-size: 90%;
+}
+
+#coding:checked + label {
+    background:url("http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Coding-Html-icon.png") no-repeat;
+    height: 125px;
+    width: 125px;
+    display:inline-block;
+    background-size: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px #2cf14d;
+}

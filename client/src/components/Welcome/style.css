@@ -1,9 +1,16 @@
 .welcome {
     background-image: url("Contact_section_BG.png");
-    width: 450px;
-    height: 300px;
+    width: 660px;
+    padding: 50px 75px;
+    color: #fff;
+    border: 10px solid #fffed7;
+    border-radius: 15px;
+	background: linear-gradient(-45deg, rgba(238, 118, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 165, 213, 0.7), rgba(35, 213, 171, 0.7));
+	background-size: 150% 150%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+    animation: Gradient 20s ease infinite;
     margin: 0 auto;
-    padding: 30px 100px;
     /* display: none; */
 }
 
@@ -36,7 +43,7 @@
     color: #383a3c;
     font-family: "Roboto Slab";
     display: block;
-    margin: 15px;
+    margin: 10px auto;
     width: 230px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
+} 
