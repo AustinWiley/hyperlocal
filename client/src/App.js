@@ -1,6 +1,7 @@
 // import React from "react";
 import React, {Component} from "react";
 import './App.css';
+import API from "./utils/API";
 
 import Activity from "./pages/Activity";
 import Home from "./pages/Home";
