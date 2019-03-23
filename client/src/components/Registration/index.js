@@ -5,7 +5,7 @@ function Registration() {
     return (
       <div className="registration">
           <h2>Registration</h2>
-          <p><span><i className="fas fa-ellipsis-h"></i></span>×××<i className="fas fa-ellipsis-h"></i></p>
+          <p id="line"><span><i className="fas fa-ellipsis-h"></i></span>×××<i className="fas fa-ellipsis-h"></i></p>
           <div className="field">
             <p className="control has-icons-left has-icons-right">
                 <input className="input" type="email" placeholder="Username" />
