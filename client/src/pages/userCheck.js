@@ -30,6 +30,7 @@ import React, {Component} from "react";
                  if(res.data) {
                      this.setState({ userRegistered: true })
                  }
+                 console.log(this.state.userRegistered)
                }
                )
                .catch(err => console.log(err));
