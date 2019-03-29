@@ -2,7 +2,7 @@
 import React, {Component} from "react";
 import './App.css';
 import API from "./utils/API";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Activity from "./pages/Activity";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -34,7 +34,16 @@ class App extends Component {
     return (
       <div className="App">
           {mainComponent}
-      </div>
+         <Router>
+         <div>
+           <Switch>
+             <Route exact path="/" component={Home} />
+             <Route exact path="/activities" component={Activity} />
+             <Route component={NoMatch} />
+           </Switch>
+         </div>
+       </Router>
+       </div>
     );
   }
 };
