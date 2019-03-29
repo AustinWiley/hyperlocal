@@ -7,6 +7,7 @@ import Activity from "./pages/Activity";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
+import UserCheck from "./pages/userCheck";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Callback from "./pages/Callback";
 
@@ -21,7 +22,7 @@ class App extends Component {
           mainComponent = <Callback />;
           break;
       case "home":
-        mainComponent = this.props.auth.isAuthenticated() ? <Home {...this.props}/> : <NoMatch />
+        mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <NoMatch />
         console.log(this.props.auth.isAuthenticated())
         break;
       case "activities":
