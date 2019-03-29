@@ -1,3 +1,12 @@
+#root {
+    padding: 0px;
+}
+
+.Welcome {
+    width: 100%;
+    padding: 182px 0px;
+}
+
 .welcome {
     background-image: url("Contact_section_BG.png");
     width: 660px;
