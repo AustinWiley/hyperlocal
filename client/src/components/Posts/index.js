@@ -11,7 +11,7 @@ function Posts() {
           <div className="dropdown ">
   <div className="dropdown-trigger">
     <button className="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-      <span>Click me</span>
+      <span>Comment</span>
       <span className="icon is-small">
         <i className="fas fa-angle-down" aria-hidden="true"></i>
       </span>

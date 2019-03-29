@@ -17,7 +17,7 @@ function Nav() {
           <div className="navbar-end">
               <div className="field is-grouped">
                 <p className="control">
-                <a href="#">
+                <a href="../">
                 <img alt="logout" src={require("./Profile Icon.png")} className="logout"/>
                 </a>
                 </p>
