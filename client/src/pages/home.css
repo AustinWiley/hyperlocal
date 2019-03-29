@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,700i');
+
+html, body, .Home {
+    background-color: #484759;
+}
+
+#columns {
+    margin-top: 0px;
+}
+
+#column {
+    flex-basis: 1;
+}
+
+.Home {
+    margin-top: 61px;
+}
+
+.sidebar {
+    background-color: rgba(34, 32, 42, 0.4);
+    border-right: 4px solid rgba(0, 0, 0, 0.7);
+}
+
+.Home h3 {
+    text-shadow: 4px 3px 1px #fffed78e;
+    font-family: Raleway;
+    font-weight: 600;
+    text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
+    color: #ADDDE8;
+}
+
+.images {
+    background-color: rgba(34, 32, 42, 0.5);
+        box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
+}
+
+.images a  {
+    margin: 5px;
+    height: 65px;
+    width: 65px;;
+    text-decoration: none;
+    text-decoration-color: none;
+    color: #ADDDE8;
+}
+
+.images a  > img {
+    height: inherit;
+    width: inherit;
+}
+
+.images p {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 27px;
+    margin-left: 41px;
+    font-weight: 500;
+}
+
+.main {
+    background-color: rgba(34, 32, 42, 0.4);
+    padding: 0px 60px 10px 60px;
+    /* overflow: scroll; */
+}
+
+.main h3 {
+    text-align: center;
+}
+
+.columns:last-child {
+    margin-bottom: 0rem;
+}
+
+.posts {
+    overflow: scroll;
+    height: 450px;
+}
+
+.Posts {
+    background-color: rgba(34, 32, 42, 0.5);
+    box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
+    font-weight: 500;
+    color: #ADDDE8;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+
+}
+
+.Posts h5, .Posts h6 {
+    color: #ADDDE8;
+    font-family: Raleway;
+    font-weight: 600;
+    margin-bottom: 5px !important;
+    text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
+}
+
+.Posts p {
+    font-size: 14px;    
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid #95BF3F;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #95BF3F;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: rgb(115, 151, 43);  
+}
+
+.copy {
+    margin: 14px auto;
+    height: 20px;
+    display: block;
+}

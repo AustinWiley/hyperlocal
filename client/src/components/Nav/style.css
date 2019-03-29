@@ -1,23 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700i');
 
-.nav {
-    position: absolute;
-    top: -134px;
-    left: -88px;
-    width: 1516px;
-    margin: 0 auto;
-    background-color: rgba(34, 32, 42, 0.3);
-    padding: 10px 0px 7px 0px;
+nav {
+    background-color: rgba(34, 32, 42, 0.4);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 81px;
 }
 
-.nav h1 {
+nav h1 {
 height: 54px;
 text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
 color: #ADDDE8;
 font-size: 60px;
-line-height: 70px;
+line-height: 48px;
+display: block;
+margin-left: auto;
+}
+.content h1:not(:first-child) {
+    margin-top: 0em;
 }
 
-.content h1 {
-    margin: 0 auto;
+.logo, .logout {
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.navbar {
+    background-color: rgba(34, 32, 42, 0.4);
 }
