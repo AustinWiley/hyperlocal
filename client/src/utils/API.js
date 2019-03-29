@@ -39,12 +39,12 @@ export default {
   },
   getUser: function(id){
     return axios.get('/api/users/' + id)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   },  
   UpdateUser: function(id, putObject){
     return axios.put('/api/users/' + id, putObject)
