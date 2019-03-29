@@ -6,6 +6,7 @@ import Welcome from "../components/Welcome"
 function Login(props) {
    return (
     //    <Container fluid>
+
        <Welcome onClick={props.auth.login}/>
     //    </Container>
    )
