@@ -1,5 +1,6 @@
 // import React from "react";
 import Home from "./Home";
+import Registration from "../components/Registration/index";
 import NoMatch from "./NoMatch"
 import API from "../utils/API"
 import React, {Component} from "react";
@@ -38,7 +39,7 @@ import React, {Component} from "react";
 
         render() {
         //   let mainComponent = this.state.UserInfo  ? <Home {...this.props}/> : <NoMatch />
-          let mainComponent = this.state.userRegistered  ? <Home {...this.props}/> : <NoMatch />
+          let mainComponent = this.state.userRegistered  ? <Home {...this.props}/> : <Registration {...this.props}/>
 
           return (
             <div className="App">
