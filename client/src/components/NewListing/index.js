@@ -1,9 +1,10 @@
 import React from "react";
+import { PromiseProvider } from "mongoose";
 
-function NewListing() {
+function NewListing(props) {
     return(
     <div>
-    <a href="#">
+    <a onClick={props.onClick}>
         <img alt="brew" src={require("./plus.png")}></img>
         <p>Post a New Listing</p>
     </a> 
