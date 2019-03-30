@@ -2,8 +2,10 @@
 import React, {Component} from "react";
 import './App.css';
 import API from "./utils/API";
-
-import Activity from "./pages/Activity";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Brewing from "./pages/Brewing";
+import Coding from "./pages/Coding";
+import Skiing from "./pages/Skiing";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
@@ -25,17 +27,23 @@ class App extends Component {
         mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <NoMatch />
         console.log(this.props.auth.isAuthenticated())
         break;
-      case "activities":
-        mainComponent = this.props.auth.isAuthenticated() ? <Activity {...this.props}/> : <NoMatch />
+      case "brewing":
+        mainComponent = this.props.auth.isAuthenticated() ? <Brewing {...this.props}/> : <NoMatch />
         break;
-        default:
+      case "coding":
+        mainComponent = this.props.auth.isAuthenticated() ? <Coding {...this.props}/> : <NoMatch />
+        break;
+      case "skiing":
+        mainComponent = this.props.auth.isAuthenticated() ? <Skiing {...this.props}/> : <NoMatch />
+        break;
+      default:
         mainComponent = <NoMatch />;
     }
 
     return (
       <div className="App">
           {mainComponent}
-      </div>
+       </div>
     );
   }
 };

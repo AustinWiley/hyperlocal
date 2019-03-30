@@ -3,7 +3,7 @@ import React from "react";
 function SkiIcon() {
     return(
     <div>
-    <a href="#">
+    <a href="/skiing">
         <img alt="brew" src={require("./ski.png")}></img>
         <p>Skiing</p>
     </a> 
