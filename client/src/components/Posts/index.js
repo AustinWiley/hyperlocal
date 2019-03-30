@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // This file exports both the List and ListItem components
 
 export function Post({ children }) {

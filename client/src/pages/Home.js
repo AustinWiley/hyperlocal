@@ -1,6 +1,5 @@
-import React, {Component} from "react";
+import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { PromiseProvider } from "mongoose";
 import "./home.css";
 import Nav from "../components/Nav";
 import BrewIcon from "../components/BrewIcon";
