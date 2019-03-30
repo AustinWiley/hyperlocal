@@ -45,7 +45,6 @@ class Brewing extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
       API.saveBrewingPost({
         user: this.state.user,
         type: this.state.type,
@@ -53,7 +52,6 @@ class Brewing extends Component {
       })
         .then(res => this.loadBrewingPosts())
         .catch(err => console.log(err));
-    }
   };
 
   render() {

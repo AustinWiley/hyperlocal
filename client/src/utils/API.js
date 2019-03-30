@@ -14,6 +14,16 @@ export default {
     return axios.get("api/posts/brewing/")
 },
 
+getCodingPosts: function(){
+  console.log("getting coding posts client side")
+  return axios.get("api/posts/coding/")
+},
+
+getSkiingPosts: function(){
+  console.log("getting skiing posts client side")
+  return axios.get("api/posts/skiing/")
+},
+
   // ======================User API==========================================
   getAllUsers: function(){
     return axios.get('/api/users/')

@@ -1,13 +1,60 @@
-import React from "react";
+import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import "./home.css";
 import Nav from "../components/Nav";
 import NewEvent from "../components/NewEvent";
 import NewListing from "../components/NewListing";
-import Posts from "../components/Posts";
+import Post from "../components/Posts";
+import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
+import API from "../utils/API";
 
-function Skiing(props) {
+class Skiing extends Component {
+  // Setting our component's initial state
+  state = {
+    posts: [],
+    user: "",
+    type: "",
+    body: ""
+  };
+
+  // When the component mounts, load all books and save them to this.state.books
+  componentDidMount() {
+    this.loadSkiingPosts();
+  }
+
+  // Loads all books  and sets them to this.state.books
+  loadSkiingPosts = () => {
+    API.getSkiingPosts()
+      .then(res =>
+        this.setState({ posts: res.data, user: "", type: "", body: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+
+  // Handles updating component state when the user types into the input field
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  handleFormSubmit = event => {
+    event.preventDefault();
+      API.saveSkiingPost({
+        user: this.state.user,
+        type: this.state.type,
+        body: this.state.body
+      })
+        .then(res => this.loadSkiingPosts())
+        .catch(err => console.log(err));
+  };
+
+  render() {
     return (
       <Container>
       <Nav />
@@ -17,7 +64,7 @@ function Skiing(props) {
               {/* <h2>Welcome {props.userId}</h2> */}
             <div className="columns is-mobile">
                 <div className="column is-one-quarter sidebar">
-                    <h3 className="title is-3">Skiing Actions</h3>
+                    <h3 className="title is-3">Coding Actions</h3>
                     <div className="images">
                         <NewEvent/>
                         <NewListing />
@@ -26,16 +73,20 @@ function Skiing(props) {
                 <div className="column main">
                     <h3 className="title is-3">What’s New</h3>
                     <div className="posts">
-                        <Posts /> 
-                        <Posts />
-                        <Posts /> 
-                        <Posts />
-                        <Posts />
-                        <Posts />
+                    <Post>
+                      {this.state.posts.map(post => {
+                      return (
+                        <PostItem key={post._id}>
+                          <h1>
+                            {post.postType} by {post.user}
+                          </h1>
+                          <p>{post.postBody}</p>
+                      </PostItem>
+                      )})}
+                    </Post>
                     </div>
                 </div>
             </div>  
-            
           </Col>
         </Row>
         <Footer />
@@ -43,7 +94,5 @@ function Skiing(props) {
       </Container>
     );
   }
-  
-  
-
-  export default Skiing;
+}
+export default Skiing;
