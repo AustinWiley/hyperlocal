@@ -58,7 +58,7 @@ class Brewing extends Component {
     return (
       <Container>
       <Nav />
-      <div className="Brewing"> 
+      <div className="Home"> 
         <Row>
           <Col size="md-12">
               {/* <h2>Welcome {props.userId}</h2> */}
@@ -70,9 +70,9 @@ class Brewing extends Component {
                         <NewListing />
                     </div>
                 </div>
-                <div className="column main">
+                <div className="column main posts">
                     <h3 className="title is-3">What’s New</h3>
-                    <div className="posts">
+                    <div className="Posts">
                     <Post>
                       {this.state.posts.map(post => {
                       return (
