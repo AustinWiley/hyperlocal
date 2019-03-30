@@ -4,10 +4,15 @@ import "./home.css";
 import Nav from "../components/Nav";
 import NewEvent from "../components/NewEvent";
 import NewListing from "../components/NewListing";
+import BrewIcon from "../components/BrewIcon";
+import SkiIcon from "../components/SkiIcon";
 import Post from "../components/Posts";
 import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
 import API from "../utils/API";
+
+var moment = require('moment');
+moment().format();
 
 class Coding extends Component {
   // Setting our component's initial state
@@ -69,6 +74,10 @@ class Coding extends Component {
                         <NewEvent/>
                         <NewListing />
                     </div>
+                    <div className="images">
+                        <BrewIcon/>
+                        <SkiIcon />
+                    </div>
                 </div>
                 <div className="column main posts">
                     <h3 className="title is-3">What’s New</h3>
@@ -78,9 +87,10 @@ class Coding extends Component {
                       return (
                         <PostItem key={post._id}>
                           <h1>
-                            {post.postType} by {post.user}
+                            {post.postType} by {post._creator}
                           </h1>
                           <p>{post.postBody}</p>
+                          <p>Posted On: {moment(post.date).format("MMM Do YY")}</p>
                       </PostItem>
                       )})}
                     </Post>

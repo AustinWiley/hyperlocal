@@ -10,6 +10,9 @@ import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 
+var moment = require('moment');
+moment().format();
+
 class Home extends Component {
   // Setting our component's initial state
   state = {
@@ -65,7 +68,7 @@ class Home extends Component {
               {/* <h2>Welcome {props.userId}</h2> */}
             <div className="columns is-mobile">
                 <div className="column is-one-quarter sidebar">
-                    <h3 className="title is-3">Coding Actions</h3>
+                    <h3 className="title is-3">Activities</h3>
                     <div className="images">
                         <BrewIcon/>
                         <SkiIcon />
@@ -80,9 +83,10 @@ class Home extends Component {
                       return (
                         <PostItem className="Posts" key={post._id}>
                           <h1>
-                            {post.postType} by {post.user}
+                            {post.postType} by {post._creator}
                           </h1>
                           <p>{post.postBody}</p>
+                          <p>Posted On: {moment(post.date).format("MMM Do YY")}</p>
                       </PostItem>
                       )})}
                     </Post>

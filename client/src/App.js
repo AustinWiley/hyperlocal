@@ -1,12 +1,9 @@
 // import React from "react";
 import React, {Component} from "react";
 import './App.css';
-import API from "./utils/API";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Brewing from "./pages/Brewing";
 import Coding from "./pages/Coding";
 import Skiing from "./pages/Skiing";
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import UserCheck from "./pages/userCheck";
@@ -48,18 +45,4 @@ class App extends Component {
   }
 };
 
-// function App() {
-//       return (
-//         <Router>
-//           <div>
-//             <Switch>
-//               <Route exact path="/" component={Login} />
-//               <Route exact path="/Home" component={Home} />
-//               <Route exact path="/Activity" component={Activity} />
-//               <Route component={NoMatch} />
-//             </Switch>
-//           </div>
-//         </Router>
-//       );
-// }
 export default App; 

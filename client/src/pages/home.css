@@ -32,6 +32,7 @@ html, body, .Home {
 .images {
     background-color: rgba(34, 32, 42, 0.5);
         box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
+        margin-bottom: 15px;
 }
 
 .images a  {
