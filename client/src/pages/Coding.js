@@ -9,6 +9,7 @@ import SkiIcon from "../components/SkiIcon";
 import Post from "../components/Posts";
 import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 import API from "../utils/API";
 
 var moment = require('moment');
@@ -18,9 +19,11 @@ class Coding extends Component {
   // Setting our component's initial state
   state = {
     posts: [],
-    user: "",
+    user: this.props.userId,
     type: "",
-    body: ""
+    activity: "Coding",
+    body: "",
+    modal: "modal"
   };
 
   // When the component mounts, load all books and save them to this.state.books
@@ -32,14 +35,34 @@ class Coding extends Component {
   loadCodingPosts = () => {
     API.getCodingPosts()
       .then(res =>
-        this.setState({ posts: res.data, user: "", type: "", body: "" })
+        this.setState({ posts: res.data, type: "", body: "" })
       )
       .catch(err => console.log(err));
   };
 
-
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  closeModal = event => {
+    this.setState({ modal: "modal"})
+  };
+
+  createEvent = event => {
+    this.setState({ modal: "modal is-active", type: "event"})
+  };
+
+  createListing = event => {
+    this.setState({ modal: "modal is-active", type: "listing"})
+  };
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -50,6 +73,7 @@ class Coding extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
+    this.setState({ modal: "modal"})
       API.saveCodingPost({
         user: this.state.user,
         type: this.state.type,
@@ -62,6 +86,15 @@ class Coding extends Component {
   render() {
     return (
       <Container>
+      <Modal 
+          class={this.state.modal}
+          type={this.state.type}
+          name="body"
+          value={this.state.body}
+          onChange={this.handleInputChange}
+          onClick={this.closeModal}
+          onSubmit={this.handleFormSubmit}
+      />
       <Nav />
       <div className="Home"> 
         <Row>
@@ -71,8 +104,12 @@ class Coding extends Component {
                 <div className="column is-one-quarter sidebar">
                     <h3 className="title is-3">Coding Actions</h3>
                     <div className="images">
-                        <NewEvent/>
-                        <NewListing />
+                        <NewEvent
+                          onClick={this.createEvent}
+                        />
+                        <NewListing
+                        onClick={this.createListing}
+                        />
                     </div>
                     <div className="images">
                         <BrewIcon/>

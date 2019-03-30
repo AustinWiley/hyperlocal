@@ -74,6 +74,7 @@ class Brewing extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
+    this.setState({ modal: "modal"})
       API.saveBrewingPost({
         user: this.state.user,
         type: this.state.type,
@@ -81,7 +82,6 @@ class Brewing extends Component {
       })
         .then(res => this.loadBrewingPosts())
         .catch(err => console.log(err));
-      console.log(this.state.user, this.state.type, this.state.body)
   };
 
   render() {
