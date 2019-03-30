@@ -7,17 +7,17 @@ import NewListing from "../components/NewListing";
 import Posts from "../components/Posts";
 import Footer from "../components/Footer";
 
-function Activity(props) {
+function Skiing(props) {
     return (
       <Container>
       <Nav />
-      <div className="Activity"> 
+      <div className="Skiing"> 
         <Row>
           <Col size="md-12">
               {/* <h2>Welcome {props.userId}</h2> */}
             <div className="columns is-mobile">
                 <div className="column is-one-quarter sidebar">
-                    <h3 className="title is-3">Activity Actions</h3>
+                    <h3 className="title is-3">Skiing Actions</h3>
                     <div className="images">
                         <NewEvent/>
                         <NewListing />
@@ -46,4 +46,4 @@ function Activity(props) {
   
   
 
-  export default Activity;
+  export default Skiing;
