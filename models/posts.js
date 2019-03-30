@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
   _creator: { type: Schema.Types.ObjectId, ref: 'User' },
-  _category: { type: Schema.Types.ObjectId, ref: 'Activity' },
+  _category: { type: String, required: true },
   postBody: { type: String, required: true },
   postType: {type: String, required: true },
   comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],

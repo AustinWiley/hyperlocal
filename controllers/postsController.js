@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   findPosts: function(req, res) {
     db.Post
-      .find(req.query)
+      .find(req.body)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -12,8 +12,8 @@ module.exports = {
 
   findBrewingPosts: function(req, res) {
     db.Post
-      .find(req.query)
-      // .where('_category').equals('Brewing')
+      .find(req.body)
+      .where('_category').equals('Brewing')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -22,7 +22,7 @@ module.exports = {
   findCodingPosts: function(req, res) {
     db.Post
       .find(req.query)
-      //.where('req.body.activityName').equals('Coding')
+      .where('_category').equals('Coding')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -31,7 +31,7 @@ module.exports = {
   findSkiingPosts: function(req, res) {
     db.Post
       .find(req.query)
-      //.where(req.body.activityName).equals("Skiing")
+      .where('_category').equals('Skiing')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
