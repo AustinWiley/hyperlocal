@@ -74,6 +74,7 @@ class Brewing extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
+    this.setState({ modal: "modal"})
       API.saveBrewingPosts({
         _creator: this.state.user,
         _activity: this.state.activity,
