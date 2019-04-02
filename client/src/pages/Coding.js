@@ -9,6 +9,7 @@ import SkiIcon from "../components/SkiIcon";
 import Post from "../components/Posts";
 import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 import API from "../utils/API";
 
 var moment = require('moment');
@@ -18,9 +19,11 @@ class Coding extends Component {
   // Setting our component's initial state
   state = {
     posts: [],
-    user: "",
+    user: this.props.userId,
+    activity: "Coding",
     type: "",
-    body: ""
+    body: "",
+    modal: "modal"
   };
 
   // When the component mounts, load all books and save them to this.state.books
@@ -32,7 +35,7 @@ class Coding extends Component {
   loadCodingPosts = () => {
     API.getCodingPosts()
       .then(res =>
-        this.setState({ posts: res.data, user: "", type: "", body: "" })
+        this.setState({ posts: res.data, body: "" })
       )
       .catch(err => console.log(err));
   };
@@ -46,22 +49,54 @@ class Coding extends Component {
     });
   };
 
+  closeModal = event => {
+    this.setState({ modal: "modal"})
+  };
+
+  createEvent = event => {
+    this.setState({ modal: "modal is-active", type: "event"})
+  };
+
+  createListing = event => {
+    this.setState({ modal: "modal is-active", type: "listing"})
+  };
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   // When the form is submitted, use the API.saveBook method to save the book data
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-      API.saveCodingPost({
-        user: this.state.user,
-        type: this.state.type,
-        body: this.state.body
+      API.saveCodingPosts({
+        _creator: this.state.user,
+        _activity: this.state.activity,
+        postType: this.state.type,
+        postBody: this.state.body
       })
         .then(res => this.loadCodingPosts())
         .catch(err => console.log(err));
+      console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
   render() {
     return (
       <Container>
+         <Modal 
+          class={this.state.modal}
+          type={this.state.type}
+          name="body"
+          value={this.state.body}
+          onChange={this.handleInputChange}
+          onClick={this.closeModal}
+          onSubmit={this.handleFormSubmit}
+      />
       <Nav />
       <div className="Home"> 
         <Row>
@@ -71,8 +106,12 @@ class Coding extends Component {
                 <div className="column is-one-quarter sidebar">
                     <h3 className="title is-3">Coding Actions</h3>
                     <div className="images">
-                        <NewEvent/>
-                        <NewListing />
+                    <NewEvent
+                            onClick={this.createEvent}
+                        />
+                        <NewListing 
+                            onClick={this.createListing}
+                        />
                     </div>
                     <div className="images">
                         <BrewIcon/>

@@ -19,6 +19,13 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  createBrewingPosts: function(req, res) {
+    db.Post
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   findCodingPosts: function(req, res) {
     db.Post
       .find(req.query)
@@ -28,11 +35,25 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  createCodingPosts: function(req, res) {
+    db.Post
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   findSkiingPosts: function(req, res) {
     db.Post
       .find(req.query)
       .where('_category').equals('Skiing')
       .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  createSkiingPosts: function(req, res) {
+    db.Post
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

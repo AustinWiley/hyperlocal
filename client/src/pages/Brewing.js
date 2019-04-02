@@ -20,8 +20,8 @@ class Brewing extends Component {
   state = {
     posts: [],
     user: this.props.userId,
-    type: "",
     activity: "Brewing",
+    type: "",
     body: "",
     modal: "modal"
   };
@@ -35,7 +35,7 @@ class Brewing extends Component {
   loadBrewingPosts = () => {
     API.getBrewingPosts()
       .then(res =>
-        this.setState({ posts: res.data, type: "", body: "",})
+        this.setState({ posts: res.data, body: "",})
       )
       .catch(err => console.log(err));
   };
@@ -74,14 +74,15 @@ class Brewing extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-      API.saveBrewingPost({
-        user: this.state.user,
-        type: this.state.type,
-        body: this.state.body
+      API.saveBrewingPosts({
+        _creator: this.state.user,
+        _activity: this.state.activity,
+        postType: this.state.type,
+        postBody: this.state.body
       })
         .then(res => this.loadBrewingPosts())
         .catch(err => console.log(err));
-      console.log(this.state.user, this.state.type, this.state.body)
+      console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
   render() {
