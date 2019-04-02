@@ -73,7 +73,7 @@ html, body, .Home {
 
 .posts {
     overflow: scroll;
-    height: 450px;
+    height: 35rem;
 }
 
 .list-group {

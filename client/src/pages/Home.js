@@ -75,13 +75,13 @@ class Home extends Component {
                         <CodeIcon />
                     </div>
                 </div>
-                <div className="column main">
+                <div className="column main posts">
                     <h3 className="title is-3">What’s New</h3>
                     <div>
-                    <Post className="posts">
+                    <Post className="Posts">
                       {this.state.posts.map(post => {
                       return (
-                        <PostItem className="Posts" key={post._id}>
+                        <PostItem key={post._id}>
                           <h1>
                             {post.postType} by {post._creator}
                           </h1>
