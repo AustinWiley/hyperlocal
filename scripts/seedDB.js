@@ -86,46 +86,46 @@ db.Activity
 
   const postSeed = [{
     _creator: "Test",
-    _category: "Brewing",
+    _activity: "Brewing",
     postType: "Listing",
     postBody: "Selling my brewing equipment",
     date: { type: Date, default: Date.now }
   },
   {
     _creator: "New User",
-    _category: "Skiing",
+    _activity: "Skiing",
     postType: "Event",
     postBody: "Ski Event!t",
     date: { type: Date, default: Date.now }
   },
   {
     _creator: "Test Hello",
-    _category: "Coding",
+    _activity: "Coding",
     postType: "Event",
     postBody: "Brewing Event this weeekend",
     date: { type: Date, default: Date.now }
   },
   {
     _creator: "Test User",
-    _category: "Coding",
+    _activity: "Coding",
     postType: "Listing",
     postBody: "Looking to buy coding equipment",
     date: { type: Date, default: Date.now }
   },
   {
-  _creator: "User Name",
-  _category: "Skiing",
-  postType: "Listing",
-  postBody: "Looking to buy skiing equipment",
-  date: { type: Date, default: Date.now }
-},
-{
-_creator: "Hello",
-_category: "Brewing",
-postType: "Listing",
-postBody: "Looking to buy brewing equipment",
-date: { type: Date, default: Date.now }
-}
+    _creator: "User Name",
+    _activity: "Skiing",
+    postType: "Listing",
+    postBody: "Looking to buy skiing equipment",
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "Hello",
+    _activity: "Brewing",
+    postType: "Listing",
+    postBody: "Looking to buy brewing equipment",
+    date: { type: Date, default: Date.now }
+  }
 ];
 
 db.Post

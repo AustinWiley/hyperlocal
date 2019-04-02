@@ -13,7 +13,7 @@ module.exports = {
   findBrewingPosts: function(req, res) {
     db.Post
       .find(req.body)
-      .where('_category').equals('Brewing')
+      .where('_activity').equals('Brewing')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -29,7 +29,7 @@ module.exports = {
   findCodingPosts: function(req, res) {
     db.Post
       .find(req.query)
-      .where('_category').equals('Coding')
+      .where('_activity').equals('Coding')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -45,7 +45,7 @@ module.exports = {
   findSkiingPosts: function(req, res) {
     db.Post
       .find(req.query)
-      .where('_category').equals('Skiing')
+      .where('_activity').equals('Skiing')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -61,12 +61,6 @@ module.exports = {
   findById: function(req, res) {
     db.Post
       .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
-    db.Post
-      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -54,11 +54,11 @@ class Brewing extends Component {
   };
 
   createEvent = event => {
-    this.setState({ modal: "modal is-active", type: "event"})
+    this.setState({ modal: "modal is-active", type: "Event"})
   };
 
   createListing = event => {
-    this.setState({ modal: "modal is-active", type: "listing"})
+    this.setState({ modal: "modal is-active", type: "Listing"})
   };
 
   handleInputChange = event => {
@@ -81,7 +81,8 @@ class Brewing extends Component {
         postBody: this.state.body
       })
         .then(res => this.loadBrewingPosts())
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.closeModal())
       console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
