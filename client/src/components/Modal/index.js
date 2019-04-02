@@ -9,9 +9,8 @@ function Modal(props) {
   <div className="modal-content">
   <h1>Ceate your {props.type}</h1>
   <div className="box">
-
     <input className="input" type="text" placeholder={props.type} value={props.value} name={props.name} onChange={props.onChange}/>
-    <a className="button" onClick={props.onSubmit}>Submit</a>
+    <a className="button submitBtn" onClick={props.onSubmit}>Submit</a>
   </div>
   </div>
   <button onClick={props.onClick} className="modal-close is-large" aria-label="close"></button>

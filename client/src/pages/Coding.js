@@ -40,7 +40,6 @@ class Coding extends Component {
       .catch(err => console.log(err));
   };
 
-
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -74,11 +73,13 @@ class Coding extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
+  this.setState({ modal: "modal"})
       API.saveCodingPosts({
         _creator: this.state.user,
         _activity: this.state.activity,
         postType: this.state.type,
         postBody: this.state.body
+
       })
         .then(res => this.loadCodingPosts())
         .catch(err => console.log(err));

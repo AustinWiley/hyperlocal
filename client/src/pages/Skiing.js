@@ -40,7 +40,6 @@ class Skiing extends Component {
       .catch(err => console.log(err));
   };
 
-
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -74,6 +73,7 @@ class Skiing extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
+    this.setState({ modal: "modal"})
       API.saveSkiingPosts({
         _creator: this.state.user,
         _activity: this.state.activity,
