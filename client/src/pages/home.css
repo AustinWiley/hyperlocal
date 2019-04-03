@@ -30,9 +30,10 @@ html, body, .Home {
 }
 
 .images {
+    padding: 5px;
     background-color: rgba(34, 32, 42, 0.5);
-        box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
-        margin-bottom: 15px;
+    box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
+
 }
 
 .images a  {
@@ -97,6 +98,10 @@ html, body, .Home {
     font-size: 14px;    
 }
 
+.dropdown-content{
+    
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 0px;
@@ -114,6 +119,11 @@ border-radius: 10px;
 
 ::-webkit-scrollbar-thumb:hover {
 background: rgb(115, 151, 43);  
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .copy {

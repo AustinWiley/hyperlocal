@@ -1,20 +1,35 @@
+#root {
+    padding: 0px;
+}
+
+.Registration {
+    width: 100%;
+    padding: 182px 0px;
+}
+
 .registration {
     background-image: url("Contact_section_BG.png");
-    width: 450px;
-    height: 300px;
+    width: 600px;
+    padding: 20px 75px;
+    color: #fff;
+    border: 10px solid #fffed7;
+    border-radius: 15px;
+	background: linear-gradient(-45deg, rgba(238, 118, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 165, 213, 0.7), rgba(35, 213, 171, 0.7));
+	background-size: 150% 150%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+    animation: Gradient 20s ease infinite;
     margin: 0 auto;
-    padding: 50px 100px;
 }
 
 .registration h2 {
-    text-shadow: 1.5px 1.5px 0 #f6edd8;
     color: #f6edd8;
-    font-family: Bazar;
-    font-weight: 400;
+    font-family: Raleway;
+    font-weight: 500;
     font-size: 2em;
     line-height: 30px;
-    text-transform: uppercase;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 #line {
@@ -26,11 +41,136 @@
     line-height: 22px; 
  }
 
+ .checkboxes {
+     display: flex;
+     justify-content: space-between;
+ }
+
 .registration .button {
     color: #383a3c;
-    font-family: "Roboto Slab";
+    background: linear-gradient(-45deg, rgba(238, 118, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 165, 213, 0.9), rgba(35, 213, 171, 0.9));
+    font-family: "Raleway";
     display: block;
+    margin: 0 auto;
     margin-top: 15px;
     width: 250px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.input[type=text] {
+    border: none;
+    border-bottom: 2px solid red;
+    background: linear-gradient(-45deg, rgba(238, 118, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 165, 213, 0.9), rgba(35, 213, 171, 0.9));
+    color: #F5FEFF
+  }
+
+  .input[type=text]:hover {
+    border-bottom: 2px solid #F5FEFF;
+  }
+
+  .input[type=text]:focus {
+    border-bottom: 2px solid #73e651;
+  }
+
+ .fa-user, .fa-star-of-life {
+    color: #F5FEFF;
+  }
+
+  .input[type=text]:focus .fa-user {
+      color: #73e651;
+  }
+
+   .input::placeholder {
+    color: #F5FEFF;
+  }
+
+  input[type=checkbox] {
+    display:none;
+}
+
+input+label {
+    margin: 10px;
+}
+
+#brewing + label {
+    display:inline-block;
+    background:url("./BrewIcon.png") no-repeat;
+    height: 68px;
+    width: 65px;;
+    background-size: 100%;
+}
+
+#brewing:hover + label, #skiing:hover + label, #coding:hover + label {
+    box-shadow: 0px 0px 15px 10px #fffed7;
+    border-radius: 17%;
+}
+
+#brewing:checked + label {
+    background:url("./BrewIcon.png") no-repeat;
+    height: 68px;
+    width: 65px;
+    display:inline-block;
+    background-size: 100%;
+    border-radius: 17%;
+    box-shadow: 0px 0px 15px 10px #2cf14d;
+}
+
+#skiing + label {
+    display:inline-block;
+    padding: 0 0 0 0px;
+    background:url("./SkiIcon.png") no-repeat;
+    height: 67px;
+    width: 65px;
+    background-size: 100%;
+}
+
+#skiing:checked + label {
+    background:url("./SkiIcon.png") no-repeat;
+    height: 67px;
+    width: 65px;
+    display:inline-block;
+    background-size: 100%;
+    border-radius: 17%;
+    box-shadow: 0px 0px 15px 10px #2cf14d;
+}
+
+#coding + label {
+    display:inline-block;
+    padding: 0 0 0 0px;
+    background:url("./CodeIcon.png") no-repeat;
+    height: 67px;
+    width: 65px;;
+    background-size: 100%;
+}
+
+#coding:checked + label {
+    background:url("./CodeIcon.png") no-repeat;
+    height: 67px;
+    width: 65px;
+    display:inline-block;
+    background-size: 100%;
+    border-radius: 17%;
+    box-shadow: 0px 0px 15px 10px #2cf14d;
+}
+
+#location .input { 
+    background-color: #F5FEFF;
+
+}
+
+select option:hover {
+    box-shadow: 0 4px 2px -2px gray;
+    background-color: red;
+}
+
+option:hover {
+    color: red;
+}
+
+.input option:hover {
+    background-color: red;
+}
+
+.dropdown select {
+    border-radius: 100%;
 }

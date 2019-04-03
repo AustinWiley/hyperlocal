@@ -10,6 +10,8 @@ import UserCheck from "./pages/userCheck";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Callback from "./pages/Callback";
 
+import Registration from "./components/Registration";
+
 class App extends Component {
   render() {
     let mainComponent = "";

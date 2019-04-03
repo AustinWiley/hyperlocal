@@ -20,16 +20,15 @@
 	-moz-animation: Gradient 20s ease infinite;
     animation: Gradient 20s ease infinite;
     margin: 0 auto;
-    /* display: none; */
 }
 
 .welcome h2,
 .welcome h3 {
     /* margin-top: 50px;    */
-    text-shadow: 1.5px 1.5px 0 #f6edd8;
-    color: #f6edd8;
-    font-family: Bazar;
-    font-weight: 400;
+    text-shadow: 0.5px 0.5px 0 #f6edd8;
+    color: #ADDDE8;
+    font-family: Raleway;
+    font-weight: 700;
     line-height: 30px;
     text-transform: uppercase;
     text-align: center;

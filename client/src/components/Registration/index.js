@@ -3,12 +3,12 @@ import "./style.css";
 
 function Registration() {
     return (
+        <div className="Registration">
       <div className="registration">
           <h2>Registration</h2>
-          <p id="line"><span><i className="fas fa-ellipsis-h"></i></span>×××<i className="fas fa-ellipsis-h"></i></p>
           <div className="field">
             <p className="control has-icons-left has-icons-right">
-                <input className="input" type="email" placeholder="Username" />
+                <input className="input" type="text" placeholder="Username" />
                 <span className="icon is-small is-left">
                 <i className="fas fa-user"></i>
                 </span>
@@ -16,29 +16,32 @@ function Registration() {
                 <i className="fas fa-star-of-life"></i>
                 </span>
             </p>
+        <div className="checkboxes">
+            <input type="checkbox" name="brewing" value="brewing" id="brewing"></input>
+            <label htmlFor="brewing"></label>
+            <input type="checkbox" name="skiing" value="skiing" id="skiing"></input>
+            <label htmlFor="skiing"></label>
+            <input type="checkbox" name="coding" value="coding" id="coding"></input>
+            <label htmlFor="coding"></label>
+        </div>    
         </div>
         <div className="field">
-            <p className="control has-icons-left has-icons-right">
-                <input className="input" type="password" placeholder="Password"/>
-                <span className="icon is-small is-left">
-                <i className="fas fa-lock"></i>
-                </span>
-                <span className="icon is-small is-right">
-                <i className="fas fa-star-of-life"></i>
-                </span>
-            </p>
-        </div>
-        {/* <div className="field">
             <div className="control">
-                <div className="is-primary">
-                    <select className="input">
-                    <option>Locale</option>
-                    <option>Great Denver</option>
+                <div className="is-primary" id="location">
+                    <select className="input dropdown">
+                    <option>Select your area</option>
+                    <option>Arvada</option>
+                    <option>Aurora</option>
+                    <option>Centennial</option>
+                    <option>Lakewood</option>
+                    <option>Thornton</option>
+                    <option>Westminster</option>
                     </select>
                 </div>
             </div>
-        </div>         */}
+        </div>        
           <button className="button is-primary is-outlined" id="login">Submit</button>
+      </div>
       </div>
     );
   }

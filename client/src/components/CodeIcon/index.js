@@ -3,8 +3,8 @@ import React from "react";
 function CodeIcon() {
     return(
     <div>
-    <a href="/coding">
-        <img alt="brew" src={require("./Coding-Html-icon.png")}></img>
+    <a href="#">
+        <img alt="brew" src={require("./CodeIcon.png")}></img>
         <p>Coding</p>
     </a> 
     </div>
