@@ -20,8 +20,8 @@ class Brewing extends Component {
   state = {
     posts: [],
     user: this.props.userId,
-    type: "",
     activity: "Brewing",
+    type: "",
     body: "",
     modal: "modal"
   };
@@ -35,7 +35,7 @@ class Brewing extends Component {
   loadBrewingPosts = () => {
     API.getBrewingPosts()
       .then(res =>
-        this.setState({ posts: res.data, type: "", body: "",})
+        this.setState({ posts: res.data, body: "",})
       )
       .catch(err => console.log(err));
   };
@@ -54,11 +54,11 @@ class Brewing extends Component {
   };
 
   createEvent = event => {
-    this.setState({ modal: "modal is-active", type: "event"})
+    this.setState({ modal: "modal is-active", type: "Event"})
   };
 
   createListing = event => {
-    this.setState({ modal: "modal is-active", type: "listing"})
+    this.setState({ modal: "modal is-active", type: "Listing"})
   };
 
   handleInputChange = event => {
@@ -75,13 +75,16 @@ class Brewing extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.setState({ modal: "modal"})
-      API.saveBrewingPost({
-        user: this.state.user,
-        type: this.state.type,
-        body: this.state.body
+      API.saveBrewingPosts({
+        _creator: this.state.user,
+        _activity: this.state.activity,
+        postType: this.state.type,
+        postBody: this.state.body
       })
         .then(res => this.loadBrewingPosts())
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.closeModal())
+      console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
   render() {

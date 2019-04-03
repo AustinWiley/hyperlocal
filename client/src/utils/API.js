@@ -4,14 +4,19 @@ export default {
   // savePost: function(postObject){
   //   return axios.post('api/posts/', postObject);
   // },
-  getPosts: function(){
-    console.log('getting posts client side')
-    return axios.get('/api/posts/');
+getPosts: function(){
+  console.log('getting posts client side')
+  return axios.get('/api/posts/');
   },
 
-  getBrewingPosts: function(){
-    console.log("getting brewing posts client side")
-    return axios.get("api/posts/brewing/")
+getBrewingPosts: function(){
+  console.log("getting brewing posts client side")
+  return axios.get("api/posts/brewing/")
+},
+
+saveBrewingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/brewing/", postObject)
 },
 
 getCodingPosts: function(){
@@ -19,9 +24,19 @@ getCodingPosts: function(){
   return axios.get("api/posts/coding/")
 },
 
+saveCodingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/coding/", postObject)
+},
+
 getSkiingPosts: function(){
   console.log("getting skiing posts client side")
   return axios.get("api/posts/skiing/")
+},
+
+saveSkiingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/skiing/", postObject)
 },
 
   // ======================User API==========================================

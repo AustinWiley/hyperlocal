@@ -20,8 +20,8 @@ class Skiing extends Component {
   state = {
     posts: [],
     user: this.props.userId,
-    type: "",
     activity: "Skiing",
+    type: "",
     body: "",
     modal: "modal"
   };
@@ -35,7 +35,7 @@ class Skiing extends Component {
   loadSkiingPosts = () => {
     API.getSkiingPosts()
       .then(res =>
-        this.setState({ posts: res.data, type: "", body: "" })
+        this.setState({ posts: res.data, body: "" })
       )
       .catch(err => console.log(err));
   };
@@ -53,11 +53,11 @@ class Skiing extends Component {
   };
 
   createEvent = event => {
-    this.setState({ modal: "modal is-active", type: "event"})
+    this.setState({ modal: "modal is-active", type: "Event"})
   };
 
   createListing = event => {
-    this.setState({ modal: "modal is-active", type: "listing"})
+    this.setState({ modal: "modal is-active", type: "Listing"})
   };
 
   handleInputChange = event => {
@@ -74,19 +74,22 @@ class Skiing extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.setState({ modal: "modal"})
-      API.saveSkiingPost({
-        user: this.state.user,
-        type: this.state.type,
-        body: this.state.body
+      API.saveSkiingPosts({
+        _creator: this.state.user,
+        _activity: this.state.activity,
+        postType: this.state.type,
+        postBody: this.state.body
       })
         .then(res => this.loadSkiingPosts())
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.closeModal())
+      console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
   render() {
     return (
       <Container>
-      <Modal 
+         <Modal 
           class={this.state.modal}
           type={this.state.type}
           name="body"
@@ -102,13 +105,13 @@ class Skiing extends Component {
               {/* <h2>Welcome {props.userId}</h2> */}
             <div className="columns is-mobile">
                 <div className="column is-one-quarter sidebar">
-                    <h3 className="title is-3">Coding Actions</h3>
+                    <h3 className="title is-3">Skiing Actions</h3>
                     <div className="images">
-                        <NewEvent
-                          onClick={this.createEvent}
+                    <NewEvent
+                            onClick={this.createEvent}
                         />
-                        <NewListing
-                          onClick={this.createListing}
+                        <NewListing 
+                            onClick={this.createListing}
                         />
                     </div>
                     <div className="images">
