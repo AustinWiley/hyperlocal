@@ -10,6 +10,8 @@ import NoMatch from "./pages/NoMatch";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Callback from "./pages/Callback";
 
+import Registration from "./components/Registration";
+
 class App extends Component {
   render() {
     let mainComponent = "";
@@ -41,16 +43,7 @@ class App extends Component {
 
 // function App() {
 //       return (
-//         <Router>
-//           <div>
-//             <Switch>
-//               <Route exact path="/" component={Login} />
-//               <Route exact path="/Home" component={Home} />
-//               <Route exact path="/Activity" component={Activity} />
-//               <Route component={NoMatch} />
-//             </Switch>
-//           </div>
-//         </Router>
+//         <Registration/>
 //       );
 // }
 export default App; 

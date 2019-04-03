@@ -4,7 +4,7 @@ function SkiIcon() {
     return(
     <div>
     <a href="#">
-        <img alt="brew" src={require("./ski.png")}></img>
+        <img alt="brew" src={require("./SkiIcon.png")}></img>
         <p>Skiing</p>
     </a> 
     </div>

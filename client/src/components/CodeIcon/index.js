@@ -4,7 +4,7 @@ function CodeIcon() {
     return(
     <div>
     <a href="#">
-        <img alt="brew" src={require("./Coding-Html-icon.png")}></img>
+        <img alt="brew" src={require("./CodeIcon.png")}></img>
         <p>Coding</p>
     </a> 
     </div>
