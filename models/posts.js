@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  _creator: { type: Schema.Types.ObjectId, ref: 'User' },
-  postText: { type: String, required: true },
+  _creator: { type: String, required: true },
+  _activity: { type: String, required: true },
   postType: {type: String, required: true },
+  postBody: { type: String, required: true },
   comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
   date: { type: Date, default: Date.now }
 });

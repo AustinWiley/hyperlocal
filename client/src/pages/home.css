@@ -33,6 +33,7 @@ html, body, .Home {
     padding: 5px;
     background-color: rgba(34, 32, 42, 0.5);
     box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
+
 }
 
 .images a  {
@@ -73,25 +74,24 @@ html, body, .Home {
 
 .posts {
     overflow: scroll;
-    height: 450px;
+    height: 35rem;
 }
 
-.Posts {
+.list-group {
     background-color: rgba(34, 32, 42, 0.5);
     box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
     font-weight: 500;
     color: #ADDDE8;
     padding: 10px 20px 10px 20px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-
-}
-
-.Posts h5, .Posts h6 {
-    color: #ADDDE8;
     font-family: Raleway;
     font-weight: 600;
     margin-bottom: 5px !important;
     text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
+}
+
+.Posts h1 {
+    font-size: 18px;    
 }
 
 .Posts p {

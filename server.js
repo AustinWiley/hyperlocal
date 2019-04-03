@@ -4,7 +4,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const app = express();
-// const apiRoutes = require("./routes/apiRoutes");
 const routes = require("./routes");
 
 // Define middleware here

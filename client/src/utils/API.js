@@ -1,23 +1,44 @@
 import axios from "axios";
-const BASEURL = "https://www.googleapis.com/posts/v1/volumes?q=";
-// const APIKEY = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=";
 
 export default {
-  search: function(query) {
-    console.log('Searching');
-    console.log(BASEURL + query.trim().replace(/ /g,"%20"));
-    return axios.get(BASEURL + query.trim().replace(/ /g,"%20"));
+  // savePost: function(postObject){
+  //   return axios.post('api/posts/', postObject);
+  // },
+getPosts: function(){
+  console.log('getting posts client side')
+  return axios.get('/api/posts/');
   },
-  savePost: function(postObject){
-    return axios.post('api/posts/', postObject);
-  },
-  getPosts: function(){
-    console.log('getting posts client side')
-    return axios.get('/api/posts/');
-  },
-  deletePost: function(id){
-    return axios.delete('/api/posts/' + id)
-  },
+
+getBrewingPosts: function(){
+  console.log("getting brewing posts client side")
+  return axios.get("api/posts/brewing/")
+},
+
+saveBrewingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/brewing/", postObject)
+},
+
+getCodingPosts: function(){
+  console.log("getting coding posts client side")
+  return axios.get("api/posts/coding/")
+},
+
+saveCodingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/coding/", postObject)
+},
+
+getSkiingPosts: function(){
+  console.log("getting skiing posts client side")
+  return axios.get("api/posts/skiing/")
+},
+
+saveSkiingPosts: function(postObject){
+  console.log("saving brewing posts client side")
+  return axios.post("api/posts/skiing/", postObject)
+},
+
   // ======================User API==========================================
   getAllUsers: function(){
     return axios.get('/api/users/')
@@ -39,12 +60,12 @@ export default {
   },
   getUser: function(id){
     return axios.get('/api/users/' + id)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   },  
   UpdateUser: function(id, putObject){
     return axios.put('/api/users/' + id, putObject)

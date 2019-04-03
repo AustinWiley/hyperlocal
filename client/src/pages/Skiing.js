@@ -2,43 +2,67 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import "./home.css";
 import Nav from "../components/Nav";
+import NewEvent from "../components/NewEvent";
+import NewListing from "../components/NewListing";
 import BrewIcon from "../components/BrewIcon";
-import SkiIcon from "../components/SkiIcon";
 import CodeIcon from "../components/CodeIcon";
 import Post from "../components/Posts";
 import PostItem from "../components/Posts";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 import API from "../utils/API";
 
 var moment = require('moment');
 moment().format();
 
-class Home extends Component {
+class Skiing extends Component {
   // Setting our component's initial state
   state = {
     posts: [],
-    user: "",
+    user: this.props.userId,
+    activity: "Skiing",
     type: "",
-    body: ""
+    body: "",
+    modal: "modal"
   };
 
   // When the component mounts, load all books and save them to this.state.books
   componentDidMount() {
-    this.loadPosts();
+    this.loadSkiingPosts();
   }
 
   // Loads all books  and sets them to this.state.books
-  loadPosts = () => {
-    API.getPosts()
+  loadSkiingPosts = () => {
+    API.getSkiingPosts()
       .then(res =>
-        this.setState({ posts: res.data, user: "", type: "", body: "" })
+        this.setState({ posts: res.data, body: "" })
       )
       .catch(err => console.log(err));
   };
 
-
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  closeModal = event => {
+    this.setState({ modal: "modal"})
+  };
+
+  createEvent = event => {
+    this.setState({ modal: "modal is-active", type: "Event"})
+  };
+
+  createListing = event => {
+    this.setState({ modal: "modal is-active", type: "Listing"})
+  };
+
+  handleInputChange = event => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -49,18 +73,31 @@ class Home extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-      API.savePost({
-        user: this.state.user,
-        type: this.state.type,
-        body: this.state.body
+    this.setState({ modal: "modal"})
+      API.saveSkiingPosts({
+        _creator: this.state.user,
+        _activity: this.state.activity,
+        postType: this.state.type,
+        postBody: this.state.body
       })
-        .then(res => this.loadPosts())
-        .catch(err => console.log(err));
+        .then(res => this.loadSkiingPosts())
+        .catch(err => console.log(err))
+        .then(this.closeModal())
+      console.log(this.state.user, this.state.activity, this.state.type, this.state.body)
   };
 
   render() {
     return (
       <Container>
+         <Modal 
+          class={this.state.modal}
+          type={this.state.type}
+          name="body"
+          value={this.state.body}
+          onChange={this.handleInputChange}
+          onClick={this.closeModal}
+          onSubmit={this.handleFormSubmit}
+      />
       <Nav />
       <div className="Home"> 
         <Row>
@@ -68,17 +105,24 @@ class Home extends Component {
               {/* <h2>Welcome {props.userId}</h2> */}
             <div className="columns is-mobile">
                 <div className="column is-one-quarter sidebar">
-                    <h3 className="title is-3">Activities</h3>
+                    <h3 className="title is-3">Skiing Actions</h3>
+                    <div className="images">
+                    <NewEvent
+                            onClick={this.createEvent}
+                        />
+                        <NewListing 
+                            onClick={this.createListing}
+                        />
+                    </div>
                     <div className="images">
                         <BrewIcon/>
-                        <SkiIcon />
                         <CodeIcon />
                     </div>
                 </div>
                 <div className="column main posts">
                     <h3 className="title is-3">What’s New</h3>
-                    <div>
-                    <Post className="Posts">
+                    <div className="Posts">
+                    <Post>
                       {this.state.posts.map(post => {
                       return (
                         <PostItem key={post._id}>
@@ -101,4 +145,4 @@ class Home extends Component {
     );
   }
 }
-export default Home;
+export default Skiing;
