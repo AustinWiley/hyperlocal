@@ -10,7 +10,7 @@ import UserCheck from "./pages/userCheck";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Callback from "./pages/Callback";
 
-import Registration from "./components/Registration";
+// import Registration from "./components/Registration";
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
           mainComponent = <Callback />;
           break;
       case "home":
-        mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <UserCheck {...this.props}/>
+        mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <NoMatch />
         console.log(this.props.auth.isAuthenticated())
         break;
       case "brewing":
