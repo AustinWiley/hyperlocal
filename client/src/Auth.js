@@ -25,6 +25,7 @@ export default class Auth {
 
     handleAuthentication = () => {
         this.auth0.parseHash((err, authResults) => {
+          console.log('hndle Auth in auth.js')
           if (authResults && authResults.accessToken && authResults.idToken) {
             let expiresAt = JSON.stringify((authResults.expiresIn) * 1000 + new Date().getTime())
             localStorage.setItem("access_token", authResults.accessToken);
@@ -40,6 +41,7 @@ export default class Auth {
       }
         
       isAuthenticated() {
+        console.log('is auth in auth.js')
         // Check whether the current time is past the
         // access token's expiresAt time
         let expiresAt = JSON.parse(localStorage.getItem('expires_at'));

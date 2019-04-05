@@ -23,7 +23,7 @@ class App extends Component {
           mainComponent = <Callback />;
           break;
       case "home":
-        mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <NoMatch />
+        mainComponent = this.props.auth.isAuthenticated() ? <UserCheck {...this.props}/> : <UserCheck {...this.props}/>
         console.log(this.props.auth.isAuthenticated())
         break;
       case "brewing":
