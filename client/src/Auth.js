@@ -10,7 +10,7 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: "reallycoolauth.auth0.com",
         clientID: "2SX696cmEE1CmSS1n1q7gqXjJLV9Ut8X",
-        redirectUri: window.location.pathname = CALLBACK_PAGE,
+        redirectUri: window.location.pathname.CALLBACK_PAGE,
         audience: "https://reallycoolauth.auth0.com/userinfo",
         responseType: "token id_token",
         scope: "openid email profile"
