@@ -79,7 +79,7 @@ class Home extends Component {
                     <h3 className="title is-3">What’s New</h3>
                     <div>
                     <Post className="Posts">
-                      {this.state.posts.map(post => {
+                      {/* {this.state.posts.map(post => {
                       return (
                         <PostItem key={post._id}>
                           <h1>
@@ -88,7 +88,7 @@ class Home extends Component {
                           <p>{post.postBody}</p>
                           <p>Posted On: {moment(post.date).format("MMM Do YY")}</p>
                       </PostItem>
-                      )})}
+                      )})} */}
                     </Post>
                     </div>
                 </div>
