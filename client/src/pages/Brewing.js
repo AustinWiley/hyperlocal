@@ -45,8 +45,8 @@ class Brewing extends Component {
   loadBrewingPosts = () => {
     API.getBrewingPosts()
       .then(res =>
-        console.log(res.data)
-        // this.setState({ posts: res.data, postBody: "" })
+        // console.log(res.data)
+        this.setState({ posts: res.data, postBody: "" })
         // console.log("load Brewing posts")
       )
       .catch(err => console.log(err));
