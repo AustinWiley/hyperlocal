@@ -20,10 +20,13 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
   //
-  app.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname = 'client/build/index.html'));
-  })
+  // app.get('*', (req, res) => {
+  //   res.sendfile(path.join(__dirname = 'client/build/index.html'));
+  // })
 }
+
+// Use apiRoutes
+app.use(routes);
 
 //build mode
 app.get('*', (req, res) => {
@@ -32,9 +35,6 @@ app.get('*', (req, res) => {
 
 // Connect to the Mongo DB { useNewUrlParser: true }
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
-
-// Use apiRoutes
-app.use(routes);
 
 //start server
 app.listen(PORT, (req, res) => {
