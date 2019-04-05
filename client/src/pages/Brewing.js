@@ -217,15 +217,14 @@ class Brewing extends Component {
                 <div className="column main posts">
                     <h3 className="title is-3">What’s New</h3>
                     <Post>
-                      {console.log(this.state.posts)}
-                      {/* {this.state.posts.map(post => {
+                      {this.state.posts.map(post => {
                       return (
                         <PostItem key={post._id}>
                           <h1>
                             {post.postType} by {post._creator}
                           </h1>
                           <p>{post.postBody}</p>
-                          <p>Posted On: {moment(post.date).format("MMM Do YY")}</p> */}
+                          <p>Posted On: {moment(post.date).format("MMM Do YY")}</p>
                             {/* <Comment
                               class={this.state.viewCommentsClass}
                               type={this.state.type}
@@ -252,8 +251,8 @@ class Brewing extends Component {
                             name="postID"
                             value={post._id}
                              /> */}
-                        {/* </PostItem> */}
-                        // )})}
+                        </PostItem>
+                        )})}
                         </Post>
                     </div>
                   </div> 
