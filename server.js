@@ -7,8 +7,11 @@ const app = express();
 const routes = require("./routes");
 
 
-// Define middleware here
+// // Define middleware here
+// app.use(express.urlencoded({ extended: true }));
+// Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
