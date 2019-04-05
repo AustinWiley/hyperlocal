@@ -24,8 +24,9 @@ export default class Auth {
     }
 
     handleAuthentication = () => {
+      console.log('handle Auth')
         this.auth0.parseHash((err, authResults) => {
-          console.log('hndle Auth in auth.js')
+          console.log('parse hash')
           if (authResults && authResults.accessToken && authResults.idToken) {
             let expiresAt = JSON.stringify((authResults.expiresIn) * 1000 + new Date().getTime())
             localStorage.setItem("access_token", authResults.accessToken);
