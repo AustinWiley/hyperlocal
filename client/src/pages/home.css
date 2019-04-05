@@ -121,3 +121,7 @@ background: rgb(115, 151, 43);
     height: 20px;
     display: block;
 }
+
+#new-comment {
+    float: right;
+}

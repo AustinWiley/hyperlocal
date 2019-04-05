@@ -141,6 +141,37 @@ saveSkiingPosts: function(postObject){
       console.log(error);
     });
   },  
+
+  getBrewingComments: function(){
+    return axios.get('/api/comments/brewing')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, 
+
+  getCodingComments: function(){
+    return axios.get('/api/comments/coding')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, 
+
+  getSkiingComments: function(){
+    return axios.get('/api/comments/skiing')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, 
+
   saveComment: function(postObject){
     return axios.post('/api/comments/', postObject)
     .then(function (response) {
@@ -150,6 +181,38 @@ saveSkiingPosts: function(postObject){
       console.log(error);
     });
   },
+
+  saveBrewingComment: function(postObject){
+    console.log("this is the post object: " + postObject);
+    return axios.post('/api/comments/brewing/' + postObject._post , postObject)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
+  saveCodingComment: function(postObject){
+    return axios.post('/api/comments/coding', postObject)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
+  saveSkiingComment: function(postObject){
+    return axios.post('/api/comments/skiing', postObject)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
   getComment: function(id){
     return axios.get('/api/comments/' + id)
     .then(function (response) {
