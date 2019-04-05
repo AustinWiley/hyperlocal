@@ -30,11 +30,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 })
 
-// Use apiRoutes
-app.use(routes);
-
 // Connect to the Mongo DB { useNewUrlParser: true }
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
+
+// Use apiRoutes
+app.use(routes);
 
 //start server
 app.listen(PORT, (req, res) => {
