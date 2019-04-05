@@ -16,7 +16,17 @@ module.exports = {
       .where('_activity').equals('Brewing')
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(422).json(err).then(console.log(res.json(dbModel))));
+  },
+
+  findBrewingComments: function(req, res) {
+    db.Post
+      .find(req.body)
+      .where('_activity').equals('Brewing')
+      .populate('Comment')
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err).then(console.log(res.json(dbModel))));
   },
 
   createBrewingPosts: function(req, res) {
@@ -77,5 +87,15 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+
+
+createBrewingComments: function(req, res) {
+  db.Post
+  .update(
+    { _id: req.body_post }, 
+    { $push: { comments: req.body } },)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+}
 };
