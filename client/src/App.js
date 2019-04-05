@@ -14,6 +14,7 @@ import Callback from "./pages/Callback";
 
 class App extends Component {
   render() {
+    {console.log('render APP.js')}
     {console.log(this.props.location)}
     let mainComponent = "";
     switch(this.props.location) {
