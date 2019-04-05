@@ -16,12 +16,6 @@ app.use(express.json());
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Connect to the Mongo DB { useNewUrlParser: true }
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
-
-// Use apiRoutes
-app.use(routes);
-
 //production mode
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
@@ -35,6 +29,12 @@ if(process.env.NODE_ENV === 'production') {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/public/index.html'));
 })
+
+// Use apiRoutes
+app.use(routes);
+
+// Connect to the Mongo DB { useNewUrlParser: true }
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
 
 //start server
 app.listen(PORT, (req, res) => {
