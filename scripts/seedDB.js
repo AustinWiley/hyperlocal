@@ -89,6 +89,18 @@ db.Activity
     _activity: "Brewing",
     postType: "Listing",
     postBody: "Selling my brewing equipment",
+    comments: [{
+      _creator: "Test",
+      commentBody: "Great",
+      date: "1/1/19",
+      _post: "ObjectId(5c968d632c8b1e1574c50829)"
+    },
+  {
+    _creator: "sdfdsfsds",
+    commentBody: "Grhtdgssdeat",
+    date: "12/10/18",
+    _post: "ObjectId(5c968d632c8b1e1574c50829)"
+  }],
     date: { type: Date, default: Date.now }
   },
   {
@@ -117,6 +129,12 @@ db.Activity
     _activity: "Skiing",
     postType: "Listing",
     postBody: "Looking to buy skiing equipment",
+    comments: {
+      _creator: "Test",
+      commentBody: "Great",
+      date: "9/1/14",
+      _post: "ObjectId(5c968d632c8b1e1574c50866)"
+    },
     date: { type: Date, default: Date.now }
   },
   {

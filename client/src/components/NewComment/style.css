@@ -1,0 +1,10 @@
+#new-comment a img{
+    float: left;
+}
+
+#new-comment a p{
+    font-size: 1rem;
+    float: right;
+    padding-top: 2px;
+    margin-left: 10px;
+}
