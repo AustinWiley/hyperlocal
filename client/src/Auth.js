@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode";
 
 const LOGIN_SUCCESS_PAGE = "/home";
 const LOGIN_FAILURE_PAGE = "/";
-const CALLBACK_PAGE = window.location.pathname + "/callback"
+const CALLBACK_PAGE = window.location.pathname + "/callback";
 
 export default class Auth {
     auth0 = new auth0.WebAuth({
