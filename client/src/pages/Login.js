@@ -3,7 +3,7 @@ import React, {Component} from "react";
 // import { Col, Row, Container } from "../components/Grid";
 import Welcome from "../components/Welcome"
 
-export default class Main extends Component {
+export default class Login extends Component {
     state = {
         UserInfo: [],
          user: this.props.name
