@@ -7,7 +7,7 @@ function Login(props) {
    return (
     //    <Container fluid>
 
-       <Welcome onClick={props.auth.login}/>
+       <Welcome onClick={this.props.auth.login}/>
     //    </Container>
    )
 };
