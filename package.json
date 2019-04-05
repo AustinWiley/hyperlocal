@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/AustinWiley/hyperlocal/issues"
   },
-  "homepage": "https://github.com/AustinWiley/hyperlocal#readme",
+  "homepage": "https://sheltered-coast-24786.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.4",
