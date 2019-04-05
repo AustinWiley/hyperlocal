@@ -4,13 +4,12 @@ import jwtDecode from "jwt-decode";
 
 const LOGIN_SUCCESS_PAGE = "/home";
 const LOGIN_FAILURE_PAGE = "/";
-const CALLBACK_PAGE = window.location.pathname + "/callback";
 
 export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: "reallycoolauth.auth0.com",
         clientID: "2SX696cmEE1CmSS1n1q7gqXjJLV9Ut8X",
-        redirectUri: CALLBACK_PAGE,
+        redirectUri: window.location.pathname + "/callback",
         audience: "https://reallycoolauth.auth0.com/userinfo",
         responseType: "token id_token",
         scope: "openid email profile"
