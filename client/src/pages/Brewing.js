@@ -251,7 +251,7 @@ class Brewing extends Component {
                             name="postID"
                             value={post._id}
                              /> */}
-                        </PostItem>
+                        {/* </PostItem> */}
                         // )})}
                         </Post>
                     </div>
