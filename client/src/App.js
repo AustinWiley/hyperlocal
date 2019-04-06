@@ -10,10 +10,12 @@ import UserCheck from "./pages/userCheck";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Callback from "./pages/Callback";
 
-import Registration from "./components/Registration";
+// import Registration from "./components/Registration";
 
 class App extends Component {
   render() {
+    {console.log('render APP.js')}
+    {console.log(this.props.location)}
     let mainComponent = "";
     switch(this.props.location) {
       case "":

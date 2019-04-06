@@ -1,4 +1,4 @@
-const express = require("express");
+  const express = require("express");
 const path = require("path");
 
 const mongoose = require("mongoose");
@@ -6,12 +6,23 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes");
 
-// Define middleware here
+
+// // Define middleware here
+// app.use(express.urlencoded({ extended: true }));
+// Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+
+//Static file declaration
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+//production mode
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  //
+  // app.get('*', (req, res) => {
+  //   res.sendfile(path.join(__dirname = 'client/build/index.html'));
+  // })
 }
 
 // Use apiRoutes
@@ -20,11 +31,12 @@ app.use(routes);
 // Connect to the Mongo DB { useNewUrlParser: true }
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
 
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+//build mode
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+})
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+//start server
+app.listen(PORT, (req, res) => {
+  console.log( `server listening on port: ${PORT}`);
+})
