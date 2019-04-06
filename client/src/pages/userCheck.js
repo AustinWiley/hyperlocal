@@ -35,12 +35,19 @@ import React, {Component} from "react";
                )
                .catch(err => console.log(err));
            };
+
+           submit() {
+             console.log("clicked")
+            document.getElementById("login").onclick = function () {
+              window.location.href = "/main";
+           }
+          }
         
         
 
         render() {
         //   let mainComponent = this.state.UserInfo  ? <Home {...this.props}/> : <NoMatch />
-          let mainComponent = this.state.userRegistered  ? <Home {...this.props}/> : <Registration {...this.props}/>
+          let mainComponent = this.state.userRegistered  ? <Home {...this.props}/> : <Registration onSubmit={this.submit}/>
 
           return (
             <div className="App">
