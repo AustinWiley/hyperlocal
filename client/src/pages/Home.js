@@ -61,7 +61,7 @@ class Home extends Component {
   render() {
     return (
       <Container>
-      <Nav />
+      <Nav {...this.props}/>
       <div className="Home"> 
         <Row>
           <Col size="md-12">
