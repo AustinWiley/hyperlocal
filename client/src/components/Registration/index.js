@@ -1,7 +1,9 @@
 import React from "react";
 import "./style.css";
+// import { PromiseProvider } from "mongoose";
 
-function Registration() {
+
+function Registration(props) {
     return (
         <div className="Registration">
       <div className="registration">
@@ -40,10 +42,10 @@ function Registration() {
                 </div>
             </div>
         </div>        
-          <button className="button is-primary is-outlined" id="login">Submit</button>
+          <button className="button is-primary is-outlined" type="submit" id="login" onClick={props.onSubmit}>Submit</button>
       </div>
       </div>
     );
   }
   
-  export default Registration;
+export default Registration;
