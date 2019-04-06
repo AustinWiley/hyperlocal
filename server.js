@@ -14,19 +14,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Static file declaration
-// app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
   //
-  // app.get('*', (req, res) => {
-  //   res.sendfile(path.join(__dirname = 'client/build/index.html'));
-  // })
-}
-
 // Use apiRoutes
 app.use(routes);
+
+  app.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname = 'client/build/index.html'));
+  })
+}
+// // Use apiRoutes
+// app.use(routes);
 
 //build mode
 app.get('*', (req, res) => {
@@ -35,6 +37,8 @@ app.get('*', (req, res) => {
 
 // Connect to the Mongo DB { useNewUrlParser: true }
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hyperlocal");
+
+
 
 //start server
 app.listen(PORT, (req, res) => {
