@@ -99,7 +99,7 @@ class Coding extends Component {
           onClick={this.closeModal}
           onSubmit={this.handleFormSubmit}
       />
-      <Nav />
+      <Nav {...this.props}/>
       <div className="Home"> 
         <Row>
           <Col size="md-12">
