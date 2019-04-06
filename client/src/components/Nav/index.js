@@ -79,7 +79,7 @@ class Nav extends Component {
                 </li>
                 <li>
                     <i className="fas fa-sign-out-alt"></i>
-                    <a href="#">Logout</a>
+                    <a href="#" onClick={this.props.auth.logout}>Logout</a>
                 </li>
             </ul>
      
