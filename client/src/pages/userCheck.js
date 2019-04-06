@@ -27,7 +27,7 @@ import React, {Component} from "react";
                .then(res => {
                 console.log('ln 30 res.data: ', res)
                 //  this.setState({ UserInfo: res.data })
-                 if(res.data.email === this.props.userId) {
+                 if(res.data) {
                      this.setState({ userRegistered: true })
                  }
                  console.log(this.state.userRegistered)
