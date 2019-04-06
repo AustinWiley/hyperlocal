@@ -28,8 +28,8 @@ function Registration() {
         <div className="field">
             <div className="control">
                 <div className="is-primary" id="location">
-                    <select className="input dropdown">
-                    <option>Select your area</option>
+                    <select className="input dropdown fa-select">
+                    <option>Select your location</option>
                     <option>Arvada</option>
                     <option>Aurora</option>
                     <option>Centennial</option>

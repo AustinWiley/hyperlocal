@@ -1,5 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700i');
 
+@media screen and (max-width: 2000px) {
+    #DropActive {
+        min-height: 48px !important;
+        background-color: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@media screen and (max-width: 1087px) {
+    #DropActive {
+        min-height: 48px !important;
+        background-color: rgba(34, 32, 42);
+        width: 600px;
+        padding: 10px;
+        margin-bottom: -75px;
+    }
+
+    .logout {
+        margin-top: 5px;
+    }
+
+
+}
+
+@media screen and (max-width: 840px) {
+    .images p {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    #is-1 {
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    #is-1 {
+        color: red;
+    }
+
+    .logout {
+        margin-top: 180px;
+    }
+}
+
+
 .navbar-start {
     justify-content: flex-start;
     margin-left: auto;
@@ -17,16 +64,16 @@ nav {
     color: #F5FEFF;
 }
 
-nav h1 {
+#is-1 {
     height: 36px;
     text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
     color: #ADDDE8;
-    font-size: 60px;
+    /* font-size: 60px !im  portant; */
     line-height: 36px;
     display: block;
 }
 
-.content h1:not(:first-child) {
+.content .is-one:not(:first-child) {
     margin-top: 0em;
 }
 
@@ -35,10 +82,8 @@ a.navbar-item:hover {
 }
 
 #DropActive {
-    padding: 10px;
-    min-height: 200px;
+    /* min-height: 200px; */
     overflow: none !important;
-    background-color: rgba(34, 32, 42);
     box-shadow: 3px 6px 4px rgba(34, 32, 42, 0.8);
 }
 
@@ -72,7 +117,7 @@ a.navbar-item:hover {
     box-shadow: 3px 6px 4px rgba(34, 32, 42);
 }
 
-.dropdown-menu a {
+.dropdown-menu a, .dropdown-menu svg {
     text-decoration: none;
     font-weight: 500;
     color: #E05344;
@@ -80,5 +125,8 @@ a.navbar-item:hover {
     text-shadow: 1px 2px 1px rgba(34, 32, 42, 0.3);
 }
 
+.dropdown-menu svg {
+    margin-right: 5px;
+}
 
 
