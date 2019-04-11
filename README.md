@@ -1,5 +1,5 @@
 # Hyperlocal
-Memory game built with React featuring Adventure Time characters. 
+Platform for people to connect based on their neighborhood.
 
 ## Website
 [Hypererlocal](https://thawing-ravine-62761.herokuapp.com/)
