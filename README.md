@@ -1,5 +1,5 @@
 # Hyperlocal
-Platform for people to connect based on their neighborhood.
+Platform for people to connect based on their neighborhood.  This App is under continual development.
 
 ## Website
 [Hypererlocal](https://thawing-ravine-62761.herokuapp.com/)
