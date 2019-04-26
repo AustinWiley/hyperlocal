@@ -24,7 +24,7 @@
 
 .registration h2 {
     color: #f6edd8;
-    font-family: Raleway;
+    font-family: "Raleway";
     font-weight: 500;
     font-size: 2em;
     line-height: 30px;
@@ -173,4 +173,15 @@ option:hover {
 
 .dropdown select {
     border-radius: 100%;
+}
+
+input option { 
+    font-family: 'FontAwesome', 'Second Font name';}
+
+.is-primary p {
+    /* font-family: "FontAwesome"; */
+}
+
+.fa-select {
+    font-family: 'Raleway', 'FontAwesome';
 }

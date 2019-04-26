@@ -18,4 +18,5 @@ export function PostItem({ children }) {
   )
 }
 
+
 export default Post;

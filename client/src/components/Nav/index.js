@@ -59,7 +59,7 @@ class Nav extends Component {
         <div id={this.state.dropId} className={this.state.notActive}>
             <div className="navbar-start">
                 <a className="navbar-item">
-                    <h1>hyperlocal</h1>
+                    <h1 className="title is-1" id="is-1">hyperlocal</h1>
                 </a>
             </div>
 
