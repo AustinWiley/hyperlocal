@@ -7,7 +7,7 @@ function Welcome(props) {
     <div className="welcome">
         <h2>Welcome to hyperlocal</h2>
         <h3>Find your people</h3>
-        <button className="button is-primary" onClick={props.onClick} id="login">Login</button>
+        <button className="button is-primary" onClick={props.onClick} id="login">Login</button>     
     </div>
     </div>
   );

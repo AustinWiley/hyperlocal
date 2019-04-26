@@ -9,7 +9,7 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: "reallycoolauth.auth0.com",
         clientID: "2SX696cmEE1CmSS1n1q7gqXjJLV9Ut8X",
-        redirectUri:"http://localhost:3000/callback",
+        redirectUri: window.location.origin + "/callback",
         audience: "https://reallycoolauth.auth0.com/userinfo",
         responseType: "token id_token",
         scope: "openid email profile"
@@ -20,11 +20,14 @@ export default class Auth {
     };
 
     login() {
+      console.log('login method in auth.js')
         this.auth0.authorize();
     }
 
     handleAuthentication = () => {
+      console.log('handle Auth')
         this.auth0.parseHash((err, authResults) => {
+          console.log('parse hash')
           if (authResults && authResults.accessToken && authResults.idToken) {
             let expiresAt = JSON.stringify((authResults.expiresIn) * 1000 + new Date().getTime())
             localStorage.setItem("access_token", authResults.accessToken);
@@ -40,6 +43,7 @@ export default class Auth {
       }
         
       isAuthenticated() {
+        console.log('is auth in auth.js')
         // Check whether the current time is past the
         // access token's expiresAt time
         let expiresAt = JSON.parse(localStorage.getItem('expires_at'));

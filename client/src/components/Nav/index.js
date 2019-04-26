@@ -43,7 +43,7 @@ class Nav extends Component {
     return (
     <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-            <a href="/home#">
+            <a href="/main">
                 <img alt="logo" src={require("./hyperlogo.png")} className="logo"/>
             </a>
 
@@ -79,7 +79,7 @@ class Nav extends Component {
                 </li>
                 <li>
                     <i className="fas fa-sign-out-alt"></i>
-                    <a href="#">Logout</a>
+                    <a href="#" onClick={this.props.auth.logout}>Logout</a>
                 </li>
             </ul>
      

@@ -10,8 +10,7 @@ mongoose.connect(
 
 const userSeed = [{
     email: "test@test.com",
-    firstName: "Test",
-    lastName: "User",
+    name: "Test",
     neighborhood: "Five Points",
     activities: [{
         _id: "ObjectId(5c968d632c8b1e1574c50829)",
@@ -27,8 +26,7 @@ const userSeed = [{
   },
   {
     email: "hello@test.com",
-    firstName: "Ima",
-    lastName: "Test",
+    name: "Ima",
     neighborhood: "Highlands",
     activities: [{
         _id: "ObjectId(5c968d632c8b1e1574c50829)",
@@ -68,31 +66,6 @@ const activitySeed = [{
   },
   {
     _participant: db.User._id,
-    activityName: "Baking",
-    activityImage: "https://image.flaticon.com/icons/svg/18/18262.svg",
-  },
-  {
-    _participant: db.User._id,
-    activityName: "Sports",
-    activityImage: "https://image.flaticon.com/icons/svg/1165/1165187.svg",
-  },
-  {
-    _participant: db.User._id,
-    activityName: "Exercise",
-    activityImage: "https://image.flaticon.com/icons/svg/1517/1517069.svg",
-  },
-  {
-    _participant: db.User._id,
-    activityName: "Hiking",
-    activityImage: "https://image.flaticon.com/icons/svg/71/71423.svg",
-  },
-  {
-    _participant: db.User._id,
-    activityName: "Camping",
-    activityImage: "https://image.flaticon.com/icons/svg/185/185590.svg",
-  },
-  {
-    _participant: db.User._id,
     activityName: "Skiing",
     activityImage: "https://image.flaticon.com/icons/svg/1412/1412982.svg",
   },
@@ -101,6 +74,81 @@ const activitySeed = [{
 db.Activity
   .remove({})
   .then(() => db.Activity.collection.insertMany(activitySeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+  const postSeed = [{
+    _creator: "Test",
+    _activity: "Brewing",
+    postType: "Listing",
+    postBody: "Selling my brewing equipment",
+    comments: [{
+      _creator: "Test",
+      commentBody: "Great",
+      date: "1/1/19",
+      _post: "ObjectId(5c968d632c8b1e1574c50829)"
+    },
+  {
+    _creator: "sdfdsfsds",
+    commentBody: "Grhtdgssdeat",
+    date: "12/10/18",
+    _post: "ObjectId(5c968d632c8b1e1574c50829)"
+  }],
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "New User",
+    _activity: "Skiing",
+    postType: "Event",
+    postBody: "Ski Event!t",
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "Test Hello",
+    _activity: "Coding",
+    postType: "Event",
+    postBody: "Brewing Event this weeekend",
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "Test User",
+    _activity: "Coding",
+    postType: "Listing",
+    postBody: "Looking to buy coding equipment",
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "User Name",
+    _activity: "Skiing",
+    postType: "Listing",
+    postBody: "Looking to buy skiing equipment",
+    comments: {
+      _creator: "Test",
+      commentBody: "Great",
+      date: "9/1/14",
+      _post: "ObjectId(5c968d632c8b1e1574c50866)"
+    },
+    date: { type: Date, default: Date.now }
+  },
+  {
+    _creator: "Hello",
+    _activity: "Brewing",
+    postType: "Listing",
+    postBody: "Looking to buy brewing equipment",
+    date: { type: Date, default: Date.now }
+  }
+];
+
+db.Post
+  .remove({})
+  .then(() => db.Post.collection.insertMany(postSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
